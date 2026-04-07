@@ -64,7 +64,7 @@ function! s:init(name) abort
   setlocal undolevels=50
 
   let b:coqtail_panel_open = 1
-  let b:coqtail_panel_size = [-1, -1]
+  let b:coqtail_panel_size = [-1, 10]
   let b:coqtail_panel_richpp = []
   return bufnr('%')
 endfunction
@@ -161,6 +161,7 @@ function! s:open(panel, force) abort
           \ : l:dir ==# 'right' ? 'vertical rightbelow' : ''
         if l:dir !=# ''
           execute printf(g:coqtail#util#bufchangepre . ' %s sbuffer %d', l:dir, l:buf)
+					setlocal winfixheight
           clearjumps
           let b:coqtail_panel_open = 1
           let l:opened = l:buf
