@@ -285,6 +285,15 @@ g:coqtail_goal_lines	The number of lines from the start of a goal to
 
 			Default: 5.
 
+				*g:coqtail_panel_text_width* *coqtail-panel-text-width*
+g:coqtail_panel_text_width
+			The value passed to Rocq's `Set Printing Width` after
+			`:RocqStart`, which controls the line width used when
+			pretty-printing goals and responses in the Goal and
+			Info panels.
+
+			Default: 100
+
 					     *b:coqtail_timeout* *coqtail-timeout*
 b:coqtail_timeout	The time in seconds before interrupting Rocq after
 			issuing a command. A value of 0 disables the timeout.

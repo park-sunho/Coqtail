@@ -30,5 +30,10 @@ if !exists('g:coqtail_dune_compile_deps')
   let g:coqtail_dune_compile_deps = 0
 endif
 
+" Default printing width for the Rocq Goal/Info panels.
+if !exists('g:coqtail_panel_text_width')
+  let g:coqtail_panel_text_width = 100
+endif
+
 " Use 'set' because wildignore is a global option
 set wildignore+=*.vo,*.vo[ks],*.glob

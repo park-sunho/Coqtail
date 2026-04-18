@@ -455,9 +455,9 @@ function! coqtail#after_startCB(chan, msg) abort
   call coqtail#refresh()
 
   call s:init_proof_diffs(b:coqtail_version.str_version)
-	call s:call('query', '', 2, {
-		\ 'args': ['Set', 'Printing', 'Width', '140'],
-		\ 'silent': 1})
+  call s:call('query', '', 2, {
+    \ 'args': ['Set', 'Printing', 'Width', string(g:coqtail_panel_text_width)],
+    \ 'silent': 1})
 
   " Call the after_start_func, if present
   if b:after_start_func != v:null
